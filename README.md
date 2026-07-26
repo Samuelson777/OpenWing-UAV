@@ -8,11 +8,9 @@
 
 [![Project Status](https://img.shields.io/badge/status-prototype%20validation-orange)](#project-status)
 [![Version](https://img.shields.io/badge/version-0.9.0-blue)](#development-history)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/Samuelson777/OpenWing-UAV/blob/main/LICENSE)
 [![GitHub Pages](https://img.shields.io/badge/live%203D%20app-GitHub%20Pages-purple)](https://samuelson777.github.io/OpenWing-UAV/)
 [![Engineering](https://img.shields.io/badge/domain-aerospace%20engineering-0b7285)](#project-overview)
-
-> Replace badge links and placeholder URLs with the final GitHub repository and GitHub Pages addresses after publishing.
 
 ---
 
