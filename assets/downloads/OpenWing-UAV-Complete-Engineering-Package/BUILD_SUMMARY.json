@@ -1,0 +1,16 @@
+{
+  "generated_utc": "2026-07-25T18:55:25.914026+00:00",
+  "files": 358,
+  "bytes": 29939414,
+  "new_engineering_summary": {
+    "generated_utc": "2026-07-25T18:54:20.041386+00:00",
+    "part_count": 32,
+    "file_count": 169,
+    "watertight_parts": 32,
+    "step_files": 35,
+    "stl_files": 35,
+    "3mf_files": 35,
+    "dxf_files": 16,
+    "nc_files": 13
+  }
+}
