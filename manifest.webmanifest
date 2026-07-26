@@ -1,0 +1,9 @@
+{
+  "name": "OpenWing-UAV Live 3D Digital Thread",
+  "short_name": "OpenWing 3D",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#050a13",
+  "theme_color": "#07111f",
+  "description": "Interactive 3D engineering project from version 0.1 to 0.9."
+}

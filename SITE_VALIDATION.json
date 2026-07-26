@@ -1,0 +1,64 @@
+{
+  "renderer_tested": "Canvas 2D software fallback (headless environment)",
+  "checks": [
+    {
+      "name": "initial loading hidden",
+      "pass": true
+    },
+    {
+      "name": "nine version buttons",
+      "pass": true
+    },
+    {
+      "name": "switch v0.5",
+      "pass": true,
+      "value": "v0.5 \u00b7 Aerodynamic Analysis"
+    },
+    {
+      "name": "chart visible v0.5",
+      "pass": true
+    },
+    {
+      "name": "switch v0.6",
+      "pass": true,
+      "value": "v0.6 \u00b7 Structural Multiphysics"
+    },
+    {
+      "name": "chart visible v0.6",
+      "pass": true
+    },
+    {
+      "name": "switch v0.7",
+      "pass": true,
+      "value": "v0.7 \u00b7 Design Optimisation"
+    },
+    {
+      "name": "chart visible v0.7",
+      "pass": true
+    },
+    {
+      "name": "switch v0.8",
+      "pass": true,
+      "value": "v0.8 \u00b7 Prototype Validation"
+    },
+    {
+      "name": "chart visible v0.8",
+      "pass": true
+    },
+    {
+      "name": "switch v0.9",
+      "pass": true,
+      "value": "v0.9 \u00b7 Open Digital Thread"
+    },
+    {
+      "name": "optimisation candidate controls",
+      "pass": true
+    },
+    {
+      "name": "deformation control",
+      "pass": true
+    }
+  ],
+  "page_errors": [],
+  "passed": true
+}

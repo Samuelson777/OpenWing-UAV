@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="OpenWing-UAV live 3D engineering digital thread from version 0.1 to 0.9.">
+  <title>OpenWing-UAV · Live 3D Digital Thread</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <noscript><div class="noscript">This application requires JavaScript for the live 3D model.</div></noscript>
+  <div id="loading" class="loading"><div class="spinner"></div><strong>Building OpenWing-UAV</strong><span>Generating parametric geometry and engineering overlays…</span></div>
+  <header class="topbar">
+    <a class="brand" href="#v0.1" aria-label="OpenWing-UAV home">
+      <span class="brand-mark">OW</span><span><strong>OpenWing-UAV</strong><small>Live 3D Digital Thread</small></span>
+    </a>
+    <div class="top-actions">
+      <button id="tourBtn" class="text-button" type="button">▶ Guided tour</button>
+      <button id="helpBtn" class="icon-button" type="button" aria-label="Open controls help">?</button>
+      <a class="primary-link" href="assets/downloads/OpenWing-UAV-Complete-Engineering-Package.zip" download>Download project</a>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <aside class="version-panel panel" aria-label="Project versions">
+      <div class="panel-title"><span>Project evolution</span><small>Keys 1–9</small></div>
+      <nav id="versionNav" class="version-nav"></nav>
+      <div class="version-progress"><span id="progressBar"></span></div>
+    </aside>
+
+    <section class="viewer" aria-label="Interactive 3D wing viewer">
+      <canvas id="glCanvas"></canvas>
+      <canvas id="chartCanvas" aria-label="Engineering chart"></canvas>
+      <div class="viewer-gradient"></div>
+      <div class="viewer-head">
+        <div><span id="versionTag" class="eyebrow">Foundation</span><h1 id="versionTitle">Parametric Geometry</h1></div>
+        <div class="live-badge"><span></span>LIVE WEBGL</div>
+      </div>
+      <div id="sceneLegend" class="scene-legend"></div>
+      <div class="coordinate-chip"><b>X</b> span <b>Y</b> vertical <b>Z</b> chord</div>
+      <div class="viewport-toolbar" role="toolbar" aria-label="3D view controls">
+        <button data-view="iso" title="Isometric view">ISO</button>
+        <button data-view="top" title="Top view">TOP</button>
+        <button data-view="front" title="Front view">FRONT</button>
+        <button id="resetViewBtn" title="Reset camera">RESET</button>
+        <button id="screenshotBtn" title="Save PNG screenshot">PNG</button>
+      </div>
+      <div class="mouse-help">Drag to orbit · Shift+drag to pan · Wheel to zoom</div>
+    </section>
+
+    <aside class="detail-panel panel">
+      <div class="detail-scroll">
+        <section>
+          <div class="section-label">Version overview</div>
+          <p id="versionSummary" class="summary"></p>
+          <div id="metricGrid" class="metric-grid"></div>
+        </section>
+        <section>
+          <div class="section-label">Delivered capabilities</div>
+          <ul id="featureList" class="feature-list"></ul>
+        </section>
+        <section class="controls-section">
+          <div class="section-label">Live model controls</div>
+          <label class="toggle"><input id="skinToggle" type="checkbox" checked><span></span>Wing skin</label>
+          <label class="toggle"><input id="structureToggle" type="checkbox"><span></span>Internal structure</label>
+          <label class="toggle"><input id="aileronsToggle" type="checkbox"><span></span>Ailerons & controls</label>
+          <label class="toggle"><input id="overlayToggle" type="checkbox"><span></span>Analysis overlay</label>
+          <label class="toggle"><input id="wireToggle" type="checkbox"><span></span>Wireframe</label>
+          <label class="toggle"><input id="rotateToggle" type="checkbox"><span></span>Auto rotate</label>
+          <label class="range-label" for="effectRange"><span id="effectLabel">Exploded view</span><output id="effectOutput">0%</output></label>
+          <input id="effectRange" type="range" min="0" max="100" value="0">
+        </section>
+        <section id="candidateSection" class="candidate-section" hidden>
+          <div class="section-label">Optimisation candidate</div>
+          <div class="segmented" id="candidateButtons">
+            <button data-candidate="lightweight">Light</button><button data-candidate="balanced" class="active">Balanced</button><button data-candidate="stiff">Stiff</button>
+          </div>
+        </section>
+        <section>
+          <div class="section-label">Engineering downloads</div>
+          <div class="download-list">
+            <a href="assets/downloads/OpenWing-UAV-Full-Tutorial-Drawings.pdf" download><span>PDF</span><b>28-sheet tutorial drawings</b></a>
+            <a href="assets/downloads/OWU-1000_Full_Wing_Assembly.stl" download><span>STL</span><b>Full-wing neutral mesh</b></a>
+            <a href="assets/downloads/OpenWing-UAV-v1.0-portfolio.pptx" download><span>PPTX</span><b>Portfolio presentation</b></a>
+            <a href="assets/downloads/OpenWing-UAV-Complete-Engineering-Package.zip" download><span>ZIP</span><b>Complete engineering package</b></a>
+          </div>
+        </section>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="statusbar">
+    <span id="statusText">Parametric surface ready</span>
+    <span class="status-separator"></span>
+    <span>Samuelson G · Open engineering portfolio</span>
+    <span class="status-spacer"></span>
+    <span id="fpsText">60 FPS</span>
+  </footer>
+
+  <dialog id="helpDialog">
+    <button id="closeHelp" class="dialog-close" aria-label="Close">×</button>
+    <span class="eyebrow">Viewer controls</span><h2>Explore the digital thread</h2>
+    <div class="help-grid">
+      <div><kbd>1–9</kbd><p>Jump between project versions.</p></div>
+      <div><kbd>Drag</kbd><p>Orbit the camera around the wing.</p></div>
+      <div><kbd>Shift + drag</kbd><p>Pan the camera target.</p></div>
+      <div><kbd>Wheel</kbd><p>Zoom in and out.</p></div>
+      <div><kbd>W</kbd><p>Toggle wireframe.</p></div>
+      <div><kbd>R</kbd><p>Reset the isometric view.</p></div>
+      <div><kbd>E</kbd><p>Toggle exploded structure.</p></div>
+      <div><kbd>Space</kbd><p>Start or stop the guided tour.</p></div>
+    </div>
+    <p class="dialog-note">The 3D scene is generated directly from the OpenWing baseline dimensions. Analysis colours and deformations use the project’s generated aerodynamic and equivalent-beam datasets.</p>
+  </dialog>
+
+  <script src="data/app-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
